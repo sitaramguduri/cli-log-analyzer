@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"log"
 	"net/url"
 	"regexp"
 	"strings"
@@ -24,6 +25,7 @@ func Parse(line string) (Entry, bool){
 		rawURL := m[2]
 		status := atoi(m[3])
 		sec := atof(m[4])
+		log.Printf("method %s", method)
 		return Entry{Method: method, Path: stripQuery(rawURL), Status: status, Latency: sec*1000}, true
 	}
 	if m := reRTms.FindStringSubmatch(line); m != nil{

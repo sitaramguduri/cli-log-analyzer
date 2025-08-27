@@ -1,0 +1,7 @@
+lines=4 endpoints=2
+p50_ms=150
+p95_ms=338
+top_endpoints:
+1. /v1/foo count=3 p50=120ms p95=196ms
+2. /v1/bar count=1 p50=350ms p95=350ms
+
